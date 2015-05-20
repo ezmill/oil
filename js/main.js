@@ -336,9 +336,9 @@ function map(value,max,minrange,maxrange) {
 function onDocumentMouseMove(event){
 	unMappedMouseX = (event.clientX );
     unMappedMouseY = (event.clientY );
-    mouseX = map(unMappedMouseX, window.innerWidth, -2.0,2.0);
+    mouseX = map(unMappedMouseX, window.innerWidth, -2.5,2.5);
     // mouseY = map(unMappedMouseY, window.innerHeight, 0.9,1.1);
-    mouseY = map(unMappedMouseY, window.innerHeight, 0.9,1.5);
+    mouseY = map(unMappedMouseY, window.innerHeight, 0.5,1.5);
 
     materialFB2.uniforms.mouseX.value = mouseX;
     material1.uniforms.mouseX.value = mouseX;
