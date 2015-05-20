@@ -24,7 +24,7 @@ var bluey = 0.0;
 var goo = 85.0;
 var blurWidth = 1.0;
 var lightWidth = 9.5;
-var lightBrightness = 0.1;
+var lightBrightness = 0.0;
 initScene();
 function initScene(){
 	container = document.createElement('div');
