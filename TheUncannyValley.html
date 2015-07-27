@@ -1,35 +1,32 @@
 <html>
 <head>
-  <title>oil</title>
-  <style>
-    body{
-    background-color: black;
-    /*background-image: url(http://fractalfantays/img/gradient.png);*/
-      background-position: center top;
-      background-size: 10%;
-      background-repeat: repeat;
-    margin: 0;
-      /*cursor:none;*/
-      font-family: "Helvetica";
-      color: white;
-      text-shadow: 0px 0px 5px black;
-      text-align: right;
+	<title>Uncanny Valley</title>
+	<style>
+    body {
+    background-image: url(https://dl.dropboxusercontent.com/u/5492793/FF/gradient.png);
+    background-position: bottom;
+    background-size: 100%, 100%;
+    background-repeat: repeat, repeat;
     }
-    #inputs{
-      position: absolute;
-      right: 0;
-      margin: 10px;
+    no-repeat center center fixed a:link {
+    color: none;
+    background-color: none;
     }
-    input[type="range"]{
-      display: block;
-      position: relative;
+    a:visited {
+    color: black;
+    background-color: none;
     }
-    label{
-  display: inline;
+    a:hover {
+    color: black;
+    background-color: none;
+    }
+    img {
+    width: auto;
     }
     
     canvas{
       position: fixed;
+      width: 100%;
       top: 0;
       left: 0;
       z-index: -100;
@@ -37,11 +34,10 @@
     #vimeo{
       pointer-events: none;
     }
-  </style>
+	</style>
 </head>
 <body bgcolor="black"<head=“”>
 <br>
-
 
 <p>
 <p align="center"  z-index="20">
@@ -52,20 +48,21 @@
  <p align="center" style= 'z-index: +1'>
          <iframe width="75%" height="20" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/132859978&amp;color=69645d&amp;inverse=false&amp;auto_play=true&amp;show_user=true"></iframe>
         </p>
+        
 
 <p>
+  <p>
       <center>
       <table>
         <tr>
           <td>
-            <!-- <img src= img/arrowblank.png height="75%" width="75%"> -->
+            <img src= img/arrowblank.png height="75%" width="75%">
           </td>
-          <td>
-            <!-- <img src= img/UncannyValleyTxt.png height="75%" width="75%" align="center"> -->
+          <td><img src= img/UncannyValleyTxt.png height="75%" width="75%">
           </td>
           <td>
             <a href="http://fractalfantasy.net/" target="_self">
-              <!-- <img src= img/arrowrightnu.png height="75%" width="75%"> -->
+              <img align="left" src= img/arrowrightnu.png height="75%" width="75%">
             </a>
           </td>
         </tr>
@@ -81,7 +78,15 @@
           <p align="center">
             <img src=https://dl.dropboxusercontent.com/u/5492793/FF/tracklist.png>
           </p>
+      
+   
+        <br>
+        <br>
+        <br>
+      <p>
        
+        <p>
+        
         <br>
         <br>
         <br>
@@ -685,6 +690,8 @@ void main() {
 }
 </script>
 <script src="js/three.min.js"></script>
-<script src="js/main.js"></script>
+<script src="js/CustomShaders.js"></script>
+<script src="js/FeedbackMaterial.js"></script>
+<script src="js/main2.js"></script>
 </body>
 </html>

@@ -31,7 +31,8 @@ function initScene(){
     document.body.appendChild(container);
 
     camera = new THREE.PerspectiveCamera(50, w / h, 1, 100000);
-    camera.position.set(0,0, 750);//test
+    // camera = new THREE.Camera();
+    camera.position.set(0,0, 1000);//test
     cameraRTT = new THREE.OrthographicCamera( w / - 2, w / 2, h / 2, h / - 2, -10000, 10000 );
 	cameraRTT.position.z = 100;
 
@@ -210,6 +211,7 @@ function initFrameDifferencing(){
 	material = new THREE.MeshBasicMaterial({map: rtBump});
 	mesh = new THREE.Mesh(planeGeometry, material);
 	scene.add(mesh);
+	// mesh.position.z = -100;
 
 }
 function animate(){
@@ -350,82 +352,43 @@ function onDocumentMouseMove(event){
 function onKeyDown( event ){
 	if( event.keyCode == "32"){
 		screenshot();
-		
-function screenshot(){
-	// var i = renderer.domElement.toDataURL('image/png');
-	var blob = dataURItoBlob(renderer.domElement.toDataURL('image/png'));
-	var file = window.URL.createObjectURL(blob);
-	var img = new Image();
-	img.src = file;
-    img.onload = function(e) {
-	    // window.URL.revokeObjectURL(this.src);
-	    window.open(this.src);
+			
+	function screenshot(){
+		// var i = renderer.domElement.toDataURL('image/png');
+		var blob = dataURItoBlob(renderer.domElement.toDataURL('image/png'));
+		var file = window.URL.createObjectURL(blob);
+		var img = new Image();
+		img.src = file;
+	    img.onload = function(e) {
+		    // window.URL.revokeObjectURL(this.src);
+		    window.open(this.src);
 
-    }
-	 // window.open(i)
-	// insertAfter(img, );
-}
-//
-		function dataURItoBlob(dataURI) {
-		    // convert base64/URLEncoded data component to raw binary data held in a string
-		    var byteString;
-		    if (dataURI.split(',')[0].indexOf('base64') >= 0)
-		        byteString = atob(dataURI.split(',')[1]);
-		    else
-		        byteString = unescape(dataURI.split(',')[1]);
-
-		    // separate out the mime component
-		    var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
-
-		    // write the bytes of the string to a typed array
-		    var ia = new Uint8Array(byteString.length);
-		    for (var i = 0; i < byteString.length; i++) {
-		        ia[i] = byteString.charCodeAt(i);
-		    }
-
-		    return new Blob([ia], {type:mimeString});
-		}
-		function insertAfter(newNode, referenceNode) {
-		    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-		}
+	    }
+		 // window.open(i)
+		// insertAfter(img, );
 	}
-}
+	//
+			function dataURItoBlob(dataURI) {
+			    // convert base64/URLEncoded data component to raw binary data held in a string
+			    var byteString;
+			    if (dataURI.split(',')[0].indexOf('base64') >= 0)
+			        byteString = atob(dataURI.split(',')[1]);
+			    else
+			        byteString = unescape(dataURI.split(',')[1]);
 
-function redUpdate(value){
-	redx = value;
-    material1.uniforms.texture.value = camTex;
+			    // separate out the mime component
+			    var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
 
-	document.querySelector('#redOutput').value = value;
-}
-function greenUpdate(value){
-	greenx = value;
-    material1.uniforms.texture.value = camTex;
+			    // write the bytes of the string to a typed array
+			    var ia = new Uint8Array(byteString.length);
+			    for (var i = 0; i < byteString.length; i++) {
+			        ia[i] = byteString.charCodeAt(i);
+			    }
 
-	document.querySelector('#greenOutput').value = value;
-}
-function blueUpdate(value){
-	bluex = value;
-    material1.uniforms.texture.value = camTex;
-
-	document.querySelector('#blueOutput').value = value;
-}
-
-function gooUpdate(value){
-	goo = value;
-	document.querySelector('#gooOutput').value = value;
-}
-
-function blurUpdate(value){
-	blurWidth = value;
-	document.querySelector('#blurOutput').value = value;
-}
-
-function widthUpdate(value){
-	lightWidth = value;
-	document.querySelector('#widthOutput').value = value;
-}
-
-function brightnessUpdate(value){
-	lightBrightness = value;
-	document.querySelector('#brightnessOutput').value = value;
+			    return new Blob([ia], {type:mimeString});
+			}
+			function insertAfter(newNode, referenceNode) {
+			    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+			}
+		}
 }

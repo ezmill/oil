@@ -1,0 +1,72 @@
+<html>
+<head>
+  <title>Uncanny Valley</title>
+  <style>
+    body {
+    background-image: url(https://dl.dropboxusercontent.com/u/5492793/FF/gradient.png);
+    background-position: bottom;
+    background-size: 100%, 100%;
+    background-repeat: repeat, repeat;
+    }
+    no-repeat center center fixed a:link {
+    color: none;
+    background-color: none;
+    }
+    a:visited {
+    color: black;
+    background-color: none;
+    }
+    a:hover {
+    color: black;
+    background-color: none;
+    }
+    img {
+    width: auto;
+    }
+    
+    canvas{
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: -100;
+    }
+    #vimeo{
+      pointer-events: none;
+    }
+
+    audio{
+      position: absolute;
+    }
+
+    #squareDiv{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      /*border: 1px solid white;*/
+      margin: 0;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body bgcolor="black">
+  
+  <div id="squareDiv"></div>
+
+  <audio id="topLeft" loop="true" src="audio/topLeft.ogg"></audio>
+  <audio id="topRight" loop="true" src="audio/topRight.ogg"></audio>
+  <audio id="bottomLeft" loop="true" src="audio/bottomLeft.ogg"></audio>
+  <audio id="bottomRight" loop="true" src="audio/bottomRight.ogg"></audio>
+  <audio id="middle" loop="true" src="audio/middle.ogg"></audio>
+
+  <script src="js/three.min.js"></script>
+  <script src="js/CustomShaders.js"></script>
+  <script src="js/FeedbackMaterial.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
